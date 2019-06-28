@@ -10,12 +10,21 @@ using Microsoft.Extensions.Hosting;
 
 namespace WorldDiscovery.GraphServer
 {
+    public class Person
+    {
+        public string Uid { get; set; }
+        public string Name { get; set; }
+        public DateTime DOB { get; set; }
+        public List<Person> Friends { get; } = new List<Person>();
+    }
+
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,10 +39,7 @@ namespace WorldDiscovery.GraphServer
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapRazorPages();
             });
         }
     }

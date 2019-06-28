@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29021.104
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WorldDiscovery.Web", "WorldDiscovery.Web\WorldDiscovery.Web.fsproj", "{C8EBB531-DCA7-451C-B953-7BED209C681B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldDiscovery.GraphServer", "WorldDiscovery.GraphServer\WorldDiscovery.GraphServer.csproj", "{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldDiscovery.GraphServer", "WorldDiscovery.GraphServer\WorldDiscovery.GraphServer.csproj", "{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C8EBB531-DCA7-451C-B953-7BED209C681B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8EBB531-DCA7-451C-B953-7BED209C681B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8EBB531-DCA7-451C-B953-7BED209C681B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8EBB531-DCA7-451C-B953-7BED209C681B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
