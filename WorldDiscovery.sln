@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29021.104
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldDiscovery.GraphServer", "WorldDiscovery.GraphServer\WorldDiscovery.GraphServer.csproj", "{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldDiscovery.Core", "WorldDiscovery.Core\WorldDiscovery.Core.csproj", "{BC1C5F81-64A2-4E96-B112-C12CD27C40BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +17,16 @@ Global
 		{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CAA4BA0-84F6-4168-988C-AF64B3D6A6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1C5F81-64A2-4E96-B112-C12CD27C40BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1C5F81-64A2-4E96-B112-C12CD27C40BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1C5F81-64A2-4E96-B112-C12CD27C40BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1C5F81-64A2-4E96-B112-C12CD27C40BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		LessCompiler = 2caa4ba0-84f6-4168-988c-af64b3d6a6c6
 		SolutionGuid = {529D6104-DE14-4472-8A9D-28793EA4C192}
 	EndGlobalSection
 EndGlobal

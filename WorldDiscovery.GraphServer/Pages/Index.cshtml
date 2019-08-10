@@ -1,21 +1,17 @@
-﻿@page
-@model WorldDiscovery.GraphServer.Pages.IndexModel
-@{
-    ViewData["Title"] = "Index";
-}
+﻿@page "/"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSS Reader</title>
+    <base href="~/" />
+    <link href="https://fonts.googleapis.com/css?family=B612&display=swap" rel="stylesheet">
+    <link href="/style/site.css" rel="stylesheet" />
+</head>
+<body>
+    <app></app>
 
-<h1>Index</h1>
-
-@Model.TransactionState
-<br/><br/>
-@Model.IsSuccess
-<br/>
-<br/>
-@Model.Message
-
-<blockquote>
-    @Model.Json
-</blockquote>
-
-
-@Model.MutationMessage
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>
