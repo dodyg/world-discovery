@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,10 +13,10 @@ namespace WorldDiscovery.GraphServer
 {
     public class Person
     {
-        public string Uid { get; set; }
         public string Name { get; set; }
+
+        [DataMember(Name = "dob")]
         public DateTime DOB { get; set; }
-        public List<Person> Friends { get; } = new List<Person>();
     }
 
     public class Startup
@@ -24,7 +25,9 @@ namespace WorldDiscovery.GraphServer
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services
+                .AddRazorPages()
+                .AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
