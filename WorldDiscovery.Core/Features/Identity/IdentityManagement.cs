@@ -7,14 +7,14 @@ namespace WorldDiscovery.Core.Features.Identity
 {
     public class IdentityManagement
     {
-        Config _cfg;
+        readonly Config _cfg;
 
         public IdentityManagement(Config cfg)
         {
             _cfg = cfg;
         }
 
-        public async Task<Result<UID>> SaveAsync(Person p)
+        public async Task<Result<Uid>> SaveAsync(Person p)
         {
             try
             {
@@ -28,13 +28,13 @@ namespace WorldDiscovery.Core.Features.Identity
                 var result = await txn.Commit();
 
                 if (!result.IsSuccess)
-                    return Result<UID>.False(string.Join(',', result.Reasons));
+                    return Result<Uid>.False(string.Join(',', result.Reasons));
 
-                return Result<UID>.True(100);
+                return Result<Uid>.True(100);
             }
             catch (Exception ex)
             {
-                return Result<UID>.False(ex);
+                return Result<Uid>.False(ex);
             }
         }
     }

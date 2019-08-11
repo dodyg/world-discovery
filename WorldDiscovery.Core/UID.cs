@@ -4,15 +4,15 @@ using System.Text;
 
 namespace WorldDiscovery.Core
 {
-    public struct UID
+    public struct Uid
     {
         public long Value { get; set; }
 
-        public static implicit operator long(UID uid) => uid.Value;
+        public static implicit operator long(Uid uid) => uid.Value;
 
-        public static implicit operator UID (long uid) => new UID(uid);
+        public static implicit operator Uid (long uid) => new Uid(uid);
 
-        public UID(long val)
+        public Uid(long val)
         {
             Value = val;
         }

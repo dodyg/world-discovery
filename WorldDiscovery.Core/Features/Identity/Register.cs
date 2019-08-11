@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WorldDiscovery.Core.Features.Identity
 {
-    public class Register
+    public static class Register
     {
         public static void Static(IServiceCollection services)
         {

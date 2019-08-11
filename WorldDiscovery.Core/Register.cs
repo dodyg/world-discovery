@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WorldDiscovery.Core
 {
-    public class Register
+    public static class Register
     {
         public static void All(IServiceCollection services)
         {

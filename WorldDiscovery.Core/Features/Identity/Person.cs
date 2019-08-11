@@ -4,16 +4,16 @@ using System.Text;
 
 namespace WorldDiscovery.Core.Features.Identity
 {
-    public interface IGraph<T>
+    public interface IGraph<out T>
     {
         T ConvertTo();
     }
 
     public class PersonNewInput : IGraph<Person>
     {
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = "";
 
-        public string LastName { get; set; }
+        public string LastName { get; set; } = "";
 
         public Person ConvertTo()
         {
@@ -29,8 +29,8 @@ namespace WorldDiscovery.Core.Features.Identity
     {
         public long Uid { get; set; }
 
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = "";
 
-        public string LastName { get; set; }
+        public string LastName { get; set; } = "";
     }
 }

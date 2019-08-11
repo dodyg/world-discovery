@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace WorldDiscovery.Core
 {
-    public class Json
+    public static class Json
     {
         public static string Serializer(object p)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace WorldDiscovery.Core
@@ -15,7 +16,7 @@ namespace WorldDiscovery.Core
             IsTrue = ist;
             Value = val;
             _exceptionObject = null;
-            Message = null;
+            Message = "";
         }
 
         public Result(bool ist, T val, string msg)
@@ -42,7 +43,7 @@ namespace WorldDiscovery.Core
 
         private Exception? _exceptionObject;
 
-        public Exception ExceptionObject
+        public Exception? ExceptionObject
         {
             get
             {
@@ -121,11 +122,6 @@ namespace WorldDiscovery.Core
             return r;
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
         public static Result<T> True(T value)
         {
             var r = new Result<T>();
@@ -134,7 +130,7 @@ namespace WorldDiscovery.Core
             return r;
         }
 
-        public void Deconstruct(out bool isOK, out T val, out string message, out Exception exceptionObj)
+        public void Deconstruct(out bool isOK, out T val, out string message, out Exception? exceptionObj)
         {
             isOK = IsTrue;
             val = Value;
