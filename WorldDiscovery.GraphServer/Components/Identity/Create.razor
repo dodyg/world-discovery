@@ -9,11 +9,11 @@
     <button @onclick="Click" type="button" class="button">Submit</button>
 </SimpleForm>
 
-
 @code 
 {
     public PersonNewInput Input { get; set; } = new PersonNewInput();
 
+    public string Message { get; set; }
     void Click()
     {
         Global.Info("Button clicked");

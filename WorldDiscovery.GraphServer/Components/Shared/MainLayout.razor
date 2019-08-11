@@ -10,7 +10,7 @@
 
 <section class="section">
     <div class="container">
-        <Alert Color="@MessageColor">
+        <Alert Color="@MessageColor" IsShow="!string.IsNullOrEmpty(LayoutData.Message.Value)">
             @LayoutData.Message.Value
         </Alert>
     </div>
