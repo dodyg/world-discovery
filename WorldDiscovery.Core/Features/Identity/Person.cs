@@ -9,20 +9,11 @@ namespace WorldDiscovery.Core.Features.Identity
         T ConvertTo();
     }
 
-    public class PersonNewInput : IGraph<Person>
+    public class PersonNewInput 
     {
         public string FirstName { get; set; } = "";
 
         public string LastName { get; set; } = "";
-
-        public Person ConvertTo()
-        {
-            return new Person()
-            {
-                FirstName = FirstName,
-                LastName = LastName
-            };
-        }
     }
 
     public class Person
