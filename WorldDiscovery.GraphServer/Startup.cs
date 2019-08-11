@@ -9,18 +9,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WorldDiscovery.GraphServer.Components;
+using MediatR;
+using Blazorise;
+using Blazorise.Bulma;
+using Blazorise.Icons.FontAwesome;
 
 namespace WorldDiscovery.GraphServer
 {
-    public class Person
-    {
-        public string Name { get; set; }
-
-        public DateTime DateOfBirth { get; set; }
-
-        public string CurrentOccupation { get; set; }
-    }
-
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -34,6 +29,15 @@ namespace WorldDiscovery.GraphServer
             services.AddServerSideBlazor();
 
             WorldDiscovery.Core.Register.All(services);
+
+            services.AddMediatR(typeof(WorldDiscovery.Core.Register));
+
+            services.AddBlazorise(options =>
+                {
+                    options.ChangeTextOnKeyPress = true; // optional
+                })
+                .AddBulmaProviders()
+                .AddFontAwesomeIcons();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +55,11 @@ namespace WorldDiscovery.GraphServer
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.ApplicationServices
+              .UseBulmaProviders()
+              .UseFontAwesomeIcons();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
