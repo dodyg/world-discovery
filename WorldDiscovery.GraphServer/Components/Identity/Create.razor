@@ -1,14 +1,21 @@
 ﻿@using WorldDiscovery.Core.Features.Identity
+@inject WorldDiscovery.Core.Features.GlobalMessage Global
 
 <h3>Create</h3>
 
 <SimpleForm>
     <TextEdit @bind-Text="@Input.FirstName"></TextEdit>
     <TextEdit @bind-Text="@Input.LastName"></TextEdit>
+    <button @onclick="Click" type="button" class="button">Submit</button>
 </SimpleForm>
 
 
 @code 
 {
     public PersonNewInput Input { get; set; } = new PersonNewInput();
+
+    void Click()
+    {
+        Global.Info("Button clicked");
+    }
 }

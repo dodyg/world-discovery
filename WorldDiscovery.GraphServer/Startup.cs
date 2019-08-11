@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WorldDiscovery.GraphServer.Components;
-using MediatR;
 using Blazorise;
 using Blazorise.Bulma;
 using Blazorise.Icons.FontAwesome;
@@ -28,14 +27,14 @@ namespace WorldDiscovery.GraphServer
 
             WorldDiscovery.Core.Register.All(services);
 
-            services.AddMediatR(typeof(WorldDiscovery.Core.Register), typeof(Startup));
-
             services.AddBlazorise(options =>
                 {
                     options.ChangeTextOnKeyPress = true; // optional
                 })
                 .AddBulmaProviders()
                 .AddFontAwesomeIcons();
+
+            services.AddSingleton<EventAggregator.Blazor.IEventAggregator, EventAggregator.Blazor.EventAggregator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

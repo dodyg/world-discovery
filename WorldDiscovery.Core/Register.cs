@@ -12,6 +12,7 @@ namespace WorldDiscovery.Core
             Features.Identity.Register.Static(services);
             services.AddSingleton<Config>();
             services.AddSingleton<Features.LayoutDataService>();
+            services.AddSingleton<Features.GlobalMessage>();
         }
     }
 }

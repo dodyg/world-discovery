@@ -1,6 +1,5 @@
 ﻿@inherits LayoutComponentBase
 @using WorldDiscovery.Core.Features
-@using System.Threading
 @inject WorldDiscovery.Core.Features.LayoutDataService LayoutData
 
 <header>
@@ -8,23 +7,40 @@
         <h1 class="title is-1">World Discovery - @LayoutData.PageTitle</h1>
     </div>
 </header>
-<br/>
+
+<section class="section">
+    <div class="container">
+        <Alert Color="@MessageColor">
+            @LayoutData.Message.Value
+        </Alert>
+    </div>
+</section>
+
+<br />
 <div class="container">
     @Body
 </div>
 
 @code
-{ 
-    public string Title { get; set; }
+{
+    Color MessageColor => LayoutData.Message.Type switch
+    {
+        MessageType.Info => Color.Info,
+        MessageType.Success => Color.Success,
+        MessageType.Warning => Color.Warning,
+        MessageType.Error => Color.Danger,
+        _ => Color.Info
+    };
 
-    protected override Task OnInitAsync()
+    protected override void OnInit()
     {
         LayoutData.PropertyChanged += OnPropertyChanged;
-        return Task.CompletedTask;
+        
+        base.OnInit();
     }
 
     private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
-          StateHasChanged();
+        Invoke(base.StateHasChanged);
     }
 }
