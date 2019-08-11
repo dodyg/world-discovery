@@ -28,7 +28,7 @@ namespace WorldDiscovery.GraphServer
 
             WorldDiscovery.Core.Register.All(services);
 
-            services.AddMediatR(typeof(WorldDiscovery.Core.Register));
+            services.AddMediatR(typeof(WorldDiscovery.Core.Register), typeof(Startup));
 
             services.AddBlazorise(options =>
                 {

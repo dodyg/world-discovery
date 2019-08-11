@@ -1,0 +1,14 @@
+﻿@using WorldDiscovery.Core.Features.Identity
+
+<h3>Create</h3>
+
+<SimpleForm>
+    <TextEdit @bind-Text="@Input.FirstName"></TextEdit>
+    <TextEdit @bind-Text="@Input.LastName"></TextEdit>
+</SimpleForm>
+
+
+@code 
+{
+    public PersonNewInput Input { get; set; } = new PersonNewInput();
+}
