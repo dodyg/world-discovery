@@ -16,8 +16,9 @@ namespace WorldDiscovery.GraphServer
     {
         public string Name { get; set; }
 
-        [DataMember(Name = "dob")]
-        public DateTime DOB { get; set; }
+        public DateTime DateOfBirth { get; set; }
+
+        public string CurrentOccupation { get; set; }
     }
 
     public class Startup
@@ -31,6 +32,8 @@ namespace WorldDiscovery.GraphServer
                 .AddRazorRuntimeCompilation();
 
             services.AddServerSideBlazor();
+
+            WorldDiscovery.Core.Register.All(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
