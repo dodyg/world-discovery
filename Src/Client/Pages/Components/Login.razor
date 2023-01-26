@@ -1,0 +1,20 @@
+﻿<h3>Login</h3>
+
+
+<MudCard>
+    <MudCardContent>
+        <MudGrid>
+            <MudItem>
+                <MudTextField @bind-Value="Input.Username"></MudTextField>
+            </MudItem>
+            <MudItem>
+                <MudTextField @bind-Value="Input.Password"></MudTextField>
+            </MudItem>
+        </MudGrid>
+    </MudCardContent>
+</MudCard>
+
+
+@code {
+    public LoginInput Input { get; set; } = new();
+}
